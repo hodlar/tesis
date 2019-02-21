@@ -29,10 +29,10 @@
 %\setlength{\captionmargin}{19pt}
 %\renewcommand{\captionlabelfont}{\sffamily}
 %\renewcommand{\labelenumi}{(\arabic{enumi})}
-% Para que no ponga encabezados en hojas vacÃ­as
+% Para que no ponga encabezados en hojas vacÃÂ­as
 %\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}
 %            \cleardoublepage}}
-% Para que incluya en el Ã­ndice resumen, introducciÃ³n, etc.
+% Para que incluya en el ÃÂ­ndice resumen, introducciÃÂ³n, etc.
 %\newcommand{\capitulo}[1]{\chapter*{#1}
 %              \addcontentsline{toc}{chapter}{#1}
 %               \markboth{\MakeUppercase { #1 } }{\MakeUppercase { #1 } }}
@@ -60,7 +60,27 @@ Mecanismos de la emisi\'on milim\'etrica del plasma del sol quieto, antecedente 
 \chapter{Modelo de Micro estrucras magneticas solares}
 \section{Caracteristicas Fisicas}
 Aqui van las propiedades fisicas de los modelos que vamos a implementar. Por ejemplo, definir las escalas de altura, las intensidades de campo, temperatura, densidades, etc.
-Para llevar a cabo la simulaci\'on del comportamiento de los campos magn\'eticos se utilizaron dos modelos distintos; uno en forma de arcos magn\'eticos \cite{loops} y otro en forma de un flujo emergente \cite{flujoemergente}
+
+Para llevar a cabo la simulaci\'on del comportamiento de los campos magn\'eticos se utilizaron dos modelos distintos; uno en forma de arcos magn\'eticos \cite{loops} y otro en forma de un flujo emergente \cite{flujoemergente}.
+
+La primer aproximaci\'on para el modelo de campo magn\'etico fue el de un loop con forma semi-circular, el cu\'al puede ser modelado como un campo magn\'etico dipolo generado por un cable dipolo enterrado debajo de la fo\'sfera.
+En este modelo es posible calcular las tres componentes del campo magn\'etico por medio de las siguientes ecuaciones \citation{Jackson}:
+
+\begin{equation}
+    B_r(r,\theta)=\frac{2mcos\theta}{r^3}
+\end{equation}
+  
+\begin{equation}
+    B_\theta(r,\theta)=\frac{2msin\theta}{r^3}
+\end{equation}
+
+\begin{equation}
+    B_\phi(r,\theta)=0
+\end{equation}
+
+Donde m representa el momento magn\'etico inducido por el anillo de corriente I con un conductor de radio a, y los parámetros theta y r son los par\'ametros libres que movemos para ir generando los valores del campo.
+
+La segunda aproximaci\'on del modelo que considera un flujo emergente
 
 \section{Implementaci\'on del modulo para Magnetohidrost\'atica}
 Aqui va la info de como implementaste los modelos.
@@ -85,9 +105,25 @@ Markus Aschwanden.
 Springer Science \& Business Media, 2006.
 
 \bibitem{flujoemergente} 
-Corrigeme. 
+Rees and Seemel.
 \textit{Corrigeme} 
-Text here
+Line Formation in an Unresolved Magnetic Element: A Test of the Centre of Gravity Method, Astronomy and Astrophysics, 1978
+
+ya que una gran cantidad del flujo magn\'etico en la fot\'osfera solar consiste en fuertes campos en elementos no resueltos. Este modelo consiste en un elemento magn\'etico con una simetr\'ia de un tubo de flujo cil\'indrico incrustado en la fot\'osfera.
+Los valores de sus componentes son calculados como
+B_z(r,z)=B_z(0,z)D(\alpha)
+B_r(r,z)=-/frac{1}{2}r\frac{dB_z(0,z)}{dz}D(\alpha)
+Este campo satisface gradiente . B = 0
+La funci\'on radial D(alpha) es tomada como
+\[ D(\alpha) = 
+    \begin{cases}
+        
+(1-alpha^2)^2 \quad \alpha <= 1
+0    \quad \alpha > 1
+    \end{cases}
+\]
+donde alpha = r/r_0(z). El radio r_0(z) del tubo a una altura z es promediado a lo largo del c\'irculo de radio R que es obtenido de:
+r_0^-2(z) = \frac2piB_z(0,z)
 
 
 \end{thebibliography}
