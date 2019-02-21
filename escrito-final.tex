@@ -1,0 +1,96 @@
+\documentclass[9pt]{book}
+%\usepackage[spanish]{babel}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[latin1]{inputenc}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+%\usepackage{rotating}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{shapepar}
+%\usepackage[small]{caption}
+%\usepackage{lscape}
+%\usepackage{natbib}
+\pagestyle{fancy}
+%\usepackage{mathrsfs}
+%\usepackage{multirow}
+\newcommand{\ihat}{\mathbf {\hat \imath}}
+\newcommand{\jhat}{\mathbf {\hat \jmath}}
+
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\lhead[\fancyplain{}{\bfseries\thepage}] {\fancyplain{}{\bfseries\rightmark}}
+%\rhead[\fancyplain{}{\bfseries\leftmark}] {\fancyplain{}{\bfseries\thepage}}
+%\cfoot{}
+%\newcommand{\ud}{\;\mathrm{d}}
+%\renewcommand{\sin}{\mbox{\,sen\,}}
+%\renewcommand{\tablename}{Tabla}
+%\setlength{\captionmargin}{19pt}
+%\renewcommand{\captionlabelfont}{\sffamily}
+%\renewcommand{\labelenumi}{(\arabic{enumi})}
+% Para que no ponga encabezados en hojas vacÃ­as
+%\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}
+%            \cleardoublepage}}
+% Para que incluya en el Ã­ndice resumen, introducciÃ³n, etc.
+%\newcommand{\capitulo}[1]{\chapter*{#1}
+%              \addcontentsline{toc}{chapter}{#1}
+%               \markboth{\MakeUppercase { #1 } }{\MakeUppercase { #1 } }}
+
+
+
+\begin{document}
+
+\numberwithin{equation}{chapter}
+  \renewcommand{\thepage}{\arabic{page}}
+  \setcounter{page}{1}
+  \renewcommand{\tablename}{Tabla}
+
+ \chapter{Introducci\'on}
+Introducci\'on
+\section{Estructuras de micro-escala en la cromosfera solar}
+observaciones de la red cromosfericas y del experimento VAULT.
+\section{El c\'odigo \emph{PakalMPI}}
+Descripci\'on del c\'odigo, puntualmente hay qu\'e explicar primero para qu\'e sirve actualmente y a partir de ello, plantear las modificaciones.
+
+
+\chapter{Emisi\'on submilim\'etrica solar}
+Mecanismos de la emisi\'on milim\'etrica del plasma del sol quieto, antecedente hist\'orico y enfoque del problema a resolver (qu\'e se va a hacer, por qu\'e se va a hacer y c\'omo se va a a hacer)
+  
+\chapter{Modelo de Micro estrucras magneticas solares}
+\section{Caracteristicas Fisicas}
+Aqui van las propiedades fisicas de los modelos que vamos a implementar. Por ejemplo, definir las escalas de altura, las intensidades de campo, temperatura, densidades, etc.
+Para llevar a cabo la simulaci\'on del comportamiento de los campos magn\'eticos se utilizaron dos modelos distintos; uno en forma de arcos magn\'eticos \cite{loops} y otro en forma de un flujo emergente \cite{flujoemergente}
+
+\section{Implementaci\'on del modulo para Magnetohidrost\'atica}
+Aqui va la info de como implementaste los modelos.
+
+
+\chapter{Resultados}
+\section{Micro arco magnetico}
+resultados de las simulaciones para el modelo de arcos magneticos
+\section{Flujo emergente}
+resultados de las simulaciones para flujo emergente
+
+
+\chapter{Discusi\'on y conclusiones}
+Comparaci\'on entre ambos modelos, discusion y resultados
+hola Springer Science \& Business Media, Aug 26, 2006
+
+\begin{thebibliography}{9}
+
+\bibitem{loops} 
+Markus Aschwanden. 
+\textit{Physics of the Solar Corona} 
+Springer Science \& Business Media, 2006.
+
+\bibitem{flujoemergente} 
+Corrigeme. 
+\textit{Corrigeme} 
+Text here
+
+
+\end{thebibliography}
+
+
+\end{document}
