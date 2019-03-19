@@ -80,7 +80,29 @@ En este modelo es posible calcular las tres componentes del campo magn\'etico po
 
 Donde m representa el momento magn\'etico inducido por el anillo de corriente I con un conductor de radio a, y los parámetros theta y r son los par\'ametros libres que movemos para ir generando los valores del campo.
 
-La segunda aproximaci\'on del modelo que considera un flujo emergente
+La segunda aproximaci\'on del modelo que considera un flujo emergente ya que una gran cantidad del flujo magn\'etico en la fot\'osfera solar consiste en fuertes campos en elementos no resueltos. Este modelo consiste en un elemento magn\'etico con una simetr\'ia de un tubo de flujo cil\'indrico incrustado en la fot\'osfera.
+Los valores de sus componentes son calculados como
+\begin{equation}
+B_z(r,z)=B_z(0,z)D(\alpha)
+B_r(r,z)=-/frac{1}{2}r\frac{dB_z(0,z)}{dz}D(\alpha)
+\end{equation}
+Este campo satisface gradiente . B = 0
+La funci\'on radial D(alpha) es tomada como
+\[ D(\alpha) = 
+    \begin{cases}
+        
+(1-alpha^2)^2 \quad \alpha <= 1
+0    \quad \alpha > 1
+    \end{cases}
+\]
+
+
+donde $\alpha = r/r_0(z)$. El radio $r_0(z)$ del tubo a una altura z es promediado a lo largo del c\'irculo de radio R que es obtenido de:
+
+
+\begin{equation}
+r_0^-2(z) = \frac2piB_z(0,z)
+\end{equation}
 
 \section{Implementaci\'on del modulo para Magnetohidrost\'atica}
 Aqui va la info de como implementaste los modelos.
@@ -109,21 +131,6 @@ Rees and Seemel.
 \textit{Corrigeme} 
 Line Formation in an Unresolved Magnetic Element: A Test of the Centre of Gravity Method, Astronomy and Astrophysics, 1978
 
-ya que una gran cantidad del flujo magn\'etico en la fot\'osfera solar consiste en fuertes campos en elementos no resueltos. Este modelo consiste en un elemento magn\'etico con una simetr\'ia de un tubo de flujo cil\'indrico incrustado en la fot\'osfera.
-Los valores de sus componentes son calculados como
-B_z(r,z)=B_z(0,z)D(\alpha)
-B_r(r,z)=-/frac{1}{2}r\frac{dB_z(0,z)}{dz}D(\alpha)
-Este campo satisface gradiente . B = 0
-La funci\'on radial D(alpha) es tomada como
-\[ D(\alpha) = 
-    \begin{cases}
-        
-(1-alpha^2)^2 \quad \alpha <= 1
-0    \quad \alpha > 1
-    \end{cases}
-\]
-donde alpha = r/r_0(z). El radio r_0(z) del tubo a una altura z es promediado a lo largo del c\'irculo de radio R que es obtenido de:
-r_0^-2(z) = \frac2piB_z(0,z)
 
 
 \end{thebibliography}
