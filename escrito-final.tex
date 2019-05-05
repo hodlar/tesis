@@ -29,10 +29,10 @@
 %\setlength{\captionmargin}{19pt}
 %\renewcommand{\captionlabelfont}{\sffamily}
 %\renewcommand{\labelenumi}{(\arabic{enumi})}
-% Para que no ponga encabezados en hojas vacÃÂÃÂ­as
+% Para que no ponga encabezados en hojas va\'iÃÂÃÂÃÂÃÂ­as
 %\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}
 %            \cleardoublepage}}
-% Para que incluya en el ÃÂÃÂ­ndice resumen, introducciÃÂÃÂ³n, etc.
+% Para que incluya en el ap\'endice resumen, introducci\'on, etc.
 %\newcommand{\capitulo}[1]{\chapter*{#1}
 %              \addcontentsline{toc}{chapter}{#1}
 %               \markboth{\MakeUppercase { #1 } }{\MakeUppercase { #1 } }}
@@ -47,9 +47,21 @@
   \renewcommand{\tablename}{Tabla}
 
  \chapter{Introducci\'on}
-Introducci\'on
+
+La observaci\'on de las estrellas se ha llevado a cabo desde hace miles de a\~nos, creando as\'i diversos calendarios que fueron utilizados tanto como utencilios de supervivencia (agricultura) como en el misticismo (religi\'on). Por medio del m\'etodo cient\'ifico se ha creado un calendario m\'as preciso y hemos avanzado considerablemente en el estudio del comportamiento de los astros, sin embargo a\'un hay mucho que no conocemos incluso de nuestra estrella m\'as cercana, el Sol.
+
+Si bien en el pasado el comportamiento de El Sol era relevante por la predicci\'on de las estaciones del a\~no, hoy en d\'ia esta estrella tiene un impacto a\'un m\'as fuerte en nosotros, debido a la infraestructura aeroespacial y las telecomunicaciones de las que tanto dependemos. Sin embargo la estructura de la atm\'osfera solar como funci\'on de temperatura ha sido un problema complicado para la investigaci\'on de la f\'isica solar \citation{VAULT1}, por lo que realizar un modelo preciso para el comportamiento Solar es hasta ahora imposible.
+
+En este trabajo se realiz\'o una extensi\'on del software Pakal \footnote{Software creado para buscar una mejor comprensi\'on del comportamiento de la luz de baja energ\'ia, la cu\'al es afectada principalmente por la atm\'osfera superior del Sol, epec\'ificamente por la regi\'on conocida como la Crom\'osfera Solar \citation{victor}.}, agregando a sus c\'alculos el efecto de peque\~nos campos magn\'eticos en la crom\'osfera solar, simulando las micro r\'afagas observadas en el experimento VAULT \citation{VAULT1}. Para la simulaci\'on de estos campos tomamos en consideraci\'on dos distintos modelos de campo magn\'etico, cuyos efectos son comparados posteriormente.
+
+El efecto de estas micro r\'afagas podr\'ia ser utilizado como parte de la explicaci\'on para el cambio tan dr\'astico de temperatura entre la crom\'osfera y la corona solar, lo cu\'al podr\'ia ser un gran paso hacia comprender mejor la atm\'osfera solar.
+
+
 \section{Estructuras de micro-escala en la cromosfera solar}
+%Esto lo dijo victor
 observaciones de la red cromosfericas y del experimento VAULT.
+
+
 \section{El c\'odigo \emph{PakalMPI}}
 Descripci\'on del c\'odigo, puntualmente hay qu\'e explicar primero para qu\'e sirve actualmente y a partir de ello, plantear las modificaciones.
 
@@ -96,10 +108,12 @@ Este campo satisface gradiente $ \nabla \cdot B = 0 $. La funci\'on radial $D(\a
 \begin{equation}
  D(\alpha) = 
     \begin{cases}
-        (1-alpha^2)^2 & \quad \alpha <= 1 \\
-        0   & \quad \alpha > 1
+        (1-alpha^2)^2 & \alpha \leq 1 \\
+        0   & \alpha > 1
     \end{cases}
 \end{equation}
+
+donde $\alpha = r/r_0(z)$. El radio $r_0(z)$ del tubo a una altura z es promediado a lo largo del c\'irculo de radio R que es obtenido de:
 
 \begin{equation} \label{r_flujo_emergente}
 r_0^-2(z) = \frac{2\pi B_z(0,z)}{\phi} \int_{0}^{1} \alpha D(\alpha) d\alpha = \frac{\pi B_z(0,z)}{3 \phi}
@@ -112,9 +126,11 @@ El campo axial es considerado
 B_z(0,z)=B_0e^{\frac{-z}{h}}
 \end{equation}
 
-Este campo se considera $B_0$ al origen $z = 0$ que fue considerado al nivel de la fot\'osfera (CORRIGEME). Este modelo permite al campo cambiar de acuerdo a la escala de altura h.
-Conforme $h\rightarrow \infty , B_z(0,z) \rightarrow B_0$, $a$ constante, y por la ecuaci\'on \ref{r_flujo_emergente} $r_0(z) \rightarrow r_0 = (3\phi / \pi B_0)^\frac{1}{2}$, que es tambi\'en una constante.
+Por lo tanto la fuerza axial de campo es $B_0$ en el origen $z=0$ que en nuestro caso se ubica al nivel de la fot\'osfera (CORRIGEME). En este modelo el campo diverge a diferente ritmo dependiendo de la escala de altura h.
 
+Conforme $h\rightarrow \infty , B_z(0,z) \rightarrow B_0$, $a$ constante, y por la ecuaci\'on \ref{r_flujo_emergente} $r_0(z) \rightarrow r_0 = (3\phi / \pi B_0)^\frac{1}{2}$, es tambi\'en una constante.
+
+En los c\'alculos consideramos $\phi=2.8x10^18$Mx y $B0=2000$Gauss. Esto implica tubos de flujo de 366km a $Z=0$
 
 
 \section{Implementaci\'on del modulo para Magnetohidrost\'atica}
@@ -141,17 +157,85 @@ Springer Science \& Business Media, 2006.
 
 \bibitem{flujoemergente} 
 Rees and Seemel.
-\textit{Corrigeme} 
-Line Formation in an Unresolved Magnetic Element: A Test of the Centre of Gravity Method, Astronomy and Astrophysics, 1978
+\textit{Line Formation in an Unresolved Magnetic Element: A Test of the Centre of Gravity Method} 
+Astronomy and Astrophysics, 1978
 
+\bibitem{Jackson} 
+A. Vourlidas, B. Sanchez, E. Landi, et al.
+\textit{Classical Electrodynamics} 
+John Wiley and Sons, 1962.
+
+\bibitem{VAULT1} 
+A. Vourlidas, B. Sanchez, E. Landi, et al.
+\textit{The structure and Dynamics of the Upper Chromosphere and Lower Transition Region as Revealed by the Subarcsecond VAULT Observations, Astronomy and Astrophysics} 
+Solar Physics, 2010.
 
 
 \end{thebibliography}
 
 
-\end{document}
-splay:inline' transform='translate(-341.0002,-807.00001)'>
-    <path inkscape:connector-curvature='0' d='m 354.0002,813 -5,5 -5,-5 z' id='path6424' sodipodi:nodetypes='cccc' style='fill:#bebebe;fill-opacity:1;stroke:none'/>
-    
-  </g>
-</svg>
+\end{document}    </include>
+    </context>
+
+    <context id="math-2" style-ref="math" class="no-spell-check">
+      <start>\\\[</start>
+      <end>\\\]</end>
+      <include>
+        <context sub-pattern="0" where="start" style-ref="math-boundary"/>
+        <context sub-pattern="0" where="end" style-ref="math-boundary"/>
+        <context ref="in-math"/>
+      </include>
+    </context>
+
+    <context id="math-env" style-ref="math" style-inside="true" class="no-spell-check">
+      <start>(\\begin)\{(math|displaymath|equation\*?|align\*?|eqnarray\*?)\}</start>
+      <end>(\\end)\{\%{2@start}\}</end>
+      <include>
+        <context sub-pattern="1" where="start" style-ref="common-commands"/>
+        <context sub-pattern="1" where="end" style-ref="common-commands"/>
+        <context ref="in-math"/>
+      </include>
+    </context>
+
+    <context id="inline-math-1" style-ref="inline-math" class="no-spell-check">
+      <start>\$</start>
+      <end>\$</end>
+      <include>
+        <context sub-pattern="0" where="start" style-ref="math-boundary"/>
+        <context sub-pattern="0" where="end" style-ref="math-boundary"/>
+        <context ref="in-math"/>
+      </include>
+    </context>
+
+    <context id="inline-math-2" style-ref="inline-math" class="no-spell-check">
+      <start>\\\(</start>
+      <end>\\\)</end>
+      <include>
+        <context sub-pattern="0" where="start" style-ref="math-boundary"/>
+        <context sub-pattern="0" where="end" style-ref="math-boundary"/>
+        <context ref="in-math"/>
+      </include>
+    </context>
+
+    <context id="math">
+      <include>
+        <context ref="math-1"/>
+        <context ref="math-2"/>
+        <context ref="math-env"/>
+        <context ref="inline-math-1"/>
+        <context ref="inline-math-2"/>
+      </include>
+    </context>
+
+    <context id="latex">
+      <include>
+        <context ref="comment"/>
+        <context ref="verbatim"/>
+        <context ref="R-block"/>
+        <context ref="headings"/>
+        <context ref="math"/>
+        <context ref="urls"/>
+        <context ref="specific-commands"/>
+        <context ref="common-commands"/>
+        <context ref="special-char"/>
+        <context ref="gen
