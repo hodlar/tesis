@@ -132,38 +132,9 @@ Como todo modelo, PakalMPI est\'a basado en una serie de supuestos que le brinda
 
 En relaci\'on con las limitaciones de PakalMPI, si bien este permite la entrada de observaciones, no est\'a basado en ellas, y por lo tanto los resultados que no representan por completo las caracter\'isticas f\'isicas. De igual forma, PakalMPI se encuentra limitado a la fot\'osfera y crom\'osfera, esto debido a que estas regiones presentan una baja actividad magn\'etica lo cu\'al permite despeciarla; contrario a lo que ocurrir\'ia en la corona solar. PakalMPI tambi\'en omite la emisi\'on \emph{gyrosynchrotron} al despreciar los campos magn\'eticos. Finalmente, el c\'odigo de PakalMPI no logra reproducir en un 100\% las funci\'ones de densidad y temperatura del plasma solar.
  
+Finalmente como concerniente a sus fortalezas, PakalMPI ha demostrado poder mejorar el tiempo de integraci\'on hasta por un orden de magnitud comparado a c\'odigos de integraci\'on lineal. Por ejemplo, en una prueba que utilizaba 32 procesadores de una m\'aquina Cray del CNS en san Luis Potos\'i, se generaron espectros sint\'eticos de 32 frecuencias, con pasos de integraci\'on de 1km del centro del disco solar en aproximadamente 3 segundos. Adem\'as, PakalMPI puede correr en clusters, supercomputadoras y computadoras personales. Los resultados de PakalMPI han sido probados por su robustez. Particularmente, se realizaron satisfactoriamente pruebas de convergencia y estabilidad de la parte num\'erica y del sistema experto, las cu\'ales son presentadas en De la Luz et al. 2010. Por \'ultimo, PakalMPI permite modelar computacionalmente modelos emp\'iricos, te\'oricos y semi emp\'iricos. 
 
-En relaci\'on con sus fortalezas, 
-Pakal puede mejorar la el tiempo de integraci\'on hasta por un orden de magnitud comparado a c\'odigos de integraci\'on lineal.
-Pakal puede correr en clusters, supercomputadoras y computadoras personales con multiprocesadores, e incluso con computadoras personales convencionales.
-Pakal permite modelar computacionalmente modelos emp\'iricos, te\'oricos y semi emp\'iricos, actualmente son usados modelos semi-emp\'iricos.
-Modelos emp\'iricos: Aquellos que solo ajustan los perfiles a las observaciones sin tener ninguna base te\'orica para su desarrollo
-Modelos te\'oricos: Aquellos que toman en cuenta \'unicamente las propiedades te\'oricas con las que contar\'ia un sistema como la Crom\'osfera.
-Modelos semi-emp\'iricos: Son modelos te\'oricos con variables libres que se hacen ajustar a las observaciones.
-Utilizando 32 procesadores de una m\'aquina Cray del CNS en san Luis Potos\'i, se ha podido generar espectros sint\'eticos de 32 frecuencias, con pasos de integraci\'on de 1km del centro del disco solar en aproximadamente 3 segundos.
-Pruebas de convergencia y estabilidad de la parte num\'erica y del sistema experto fueron presentadas en De la Luz et al. (2010)
-
-Mi modelo considera los campos magn\'eticos y por consiguiente una parte de la emisi\'on sincrotron. Este modelo extiende el modelo hidrodin\'amico de PakalPMI a un modelo magnetohidrodin\'amico, lo cu\'al es un poco m\'as acercado a la constituci\'on f\'isica de la crom\'osfera solar
-
-Debido a las observaciones de espiculas es que se decidi\'o considerar el modelo de flujo emergente
-
-Qu\'e es:
-
-
-limitaciones
-
-
-
-fortalezas
- 
-
-supuestos
-
-Cuando los electrones individuales son desviados por un campo el\'ectrico producido por alg\'un ion, la aceleraci\'on pruducto de su cambio de trayectoria general emisi\'on Bremmstrahlung o libre-libre.  Para la emisi\'on en radio, los encuentros distantes con los iones son los m\'as comunes e importantes. Estos encuentros generan solo peque\~as desviaciones en su trayectoria. Los encuentros cercanos son menos probables, por lo que su contribuci\'on a la emisi\'on es mucho menor, adem\'as de producir grandes cambios de trayectorias.
-Los par\'ametros de temperatura, densidad y de presi\'on son muy dif\'iciles de calcular, por lo que es una buena idea tomar los valores ya publicados. Sin embargo, no existe un solo modelo que vaya desde la Fot\'osfera hasta la Corona, debido principalmente a la complejidad que involucra tratar la zona de transici\'on. Adem\'as de que los procesos f\'isicos que trancurren en cada una de estas zonas difieren demasiado, por lo que es imposible manejar todo con un solo modelo.
-
-
-Pakal lee la estructura atmosf\'erica, para lo cu\'al busca 5 perfiles fundamentales en funci\'on de la altura sobre la Fot\'osfera: temperatura, densidad de hidr\'ogeno, \'atomos presentes y el par\'ametro b1. Con estos valores se generan en una estructura l\'ogica las capas estratificadas de la atm\'osfera. A cada capa atmosf\'erica le corresponde un identificador. Este identificador es un valor de referencia para relacionar la metalicidad de cada capa. Como en principio sabemos cuales son los \'atomos presentes en cada capa, lo qeu necesitamos saber es la cantidad de ellos. Para eso se utiliza un modelo at\'omico ya provisto con los valores fundamentales, como sus potenciales de ionizaci\'on energ\'eticos. Adem
+En esta tesis se propone una extensi\'on el m\'odulo de funciones f\'isicas, denominado Jaguar. Particularmente se agrega el efecto de los campos magn\'eticos a la ecuaci\'on de transferencia al agregar la componente de la presi\'on magn\'etica. Lo anterior convierte al modelo hidrodin\'amico que se usa actualmente en un modelo magnetohidrodin\'amico. Con esta adici\'on ahora (1) se puede generar un escenario m\'as apegado a las observaciones f\'isicas de la atm\'osfera solar, y (2) se facilita la adaptaci\'on del c\'odigo ante la adici\'on de cualquier modelo de campo magn\'etico. Con relaci\'on a esto \'ultimo, ahora se puede solo cambiar una peque\~na fracci\'on del c\'odigo (la parte donde se encuentra el modelo de campo magn\'etico) sin necesidad de alterar el core de PakalMPI . 
 
 
 
@@ -177,6 +148,9 @@ Estos mecanismos consisten en transiciones at\'omicas (que pueden ser ionizantes
   
 \chapter{Modelo de Micro estrucras magneticas solares}
 \section{Caracteristicas Fisicas}
+
+
+Debido a las observaciones de espiculas es que se decidi\'o considerar el modelo de flujo emergente
 
 La base de la crom\'osfera presenta gr\'anulos con una escala de tama\~no relativamente mayor que aquellos presentes en la fot\'osfera concentrando flujo magn\'etico, el cual est\'a asociado con flujos verticales de plasma llamados \emph{esp\'iculas}. M\'as all\'a de la base de la crom\'osfera cambia la condici\'on en la presi\'on dominante, ya que mientras la presi\'on del gas domina a niveles fotosfericos, a estos niveles esta condici\'on se invierte y las distribuciones de brillo observadas est\'an dominadas por la geometr\'ia del campo magn\'etico.
 
