@@ -67,56 +67,93 @@ Actualmente, el c\'odigo de PAKALMPI realiza sus modelos de simulaci\'on sin con
 
 En las siguientes secciones de este escrito se detallar\'a la teorizaci\'on y matematizaci\'on de la extensi\'on propuesta y realizada al modelo de simulaci\'on computacional PAKALMPI. Concretamente, esta tesis tiene la siguiente estructura. En la siguiente subsecci\'on. En la secci\'on 2, se aborda  en general. En la subsecci\'on 2.1
 
-AQUI TERMINA LA COSA QUE ME DIO ERIC LALALALALALALALALALALALALALA
 
 
 
 
 
+\chapter{Marco te\'orico}
 
 \section{Estructuras de micro-escala en la cromosfera solar}
 %Esto lo dijo victor
-observaciones de la red cromosfericas y del experimento VAULT.
+%observaciones de la red cromosfericas y del experimento VAULT.
 %
 
-La atm\'osfera solar se puede dividir en las siguientes capas: la fot\'osfera, crom\'osfera, regi\'on de transici\'on y la corona solar. Cada una de estas regiones tiene diferentes propiedades y caracter\'isticas, las cuales se sintetizan en la figura. %aqui va la figura de ERIC que vas a poner PENDIENTE la cosa que sigue va punto y seguido pero el comentario no sirve%. 
-De entre estas la crom\'osfera es una de las partes m\'as desconocidas para la ciencia hasta el momento. Su mayor misterio es que conforme la densidad decrementa, la temperatura en lugar de decrementar tambi\'en, incrementa. Este fen\'omeno se presenta a\'un m\'as radicalmente en una regi\'on particular conocida como regi\'on de transici\'on (TR por su nombre en ingl\'es "Transition Region"). Particularmente, en dicha regi\'on resulta inexplicable el cambio radical que pasa de $10^4$K a $10^5$ K en una distancia de 1000km (Vease figuras x y y(las grafiquitas de T y D PENDIENTE), donde se ilustran los cambios de densidad y temperatura).
-%Aqui pongo la fotito de la primer figura
-%aqui pondria las grafiquitas
+La atm\'osfera solar se puede dividir en las siguientes capas: la fot\'osfera, crom\'osfera, regi\'on de transici\'on y la corona solar. Cada una de estas regiones tiene diferentes propiedades y caracter\'isticas, las cuales se sintetizan en la figura \ref{atmosfera_solar}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{atmosfera}
+\caption{ Representaci\'on gr\'afica de las capas del sol (no se encuentra a escala). \newline
+*Existe debate sobre si la regi\'on de transici\'on es una regi\'on por s\'i misma o forma parte de la Crom\'osfera. Independientemente de esto, se localizar\'ia entre la Crom\'osfera y la Corona Solar. \newline
+$^{a}$ https://www.nasa.gov/mission\_pages/iris/multimedia/layerzoo.html \newline
+$^{b}$ https://solarscience.msfc.nasa.gov/interior.shtml}
+\label{atmosfera_solar}
+\end{figure}
+
+
+%https://solar-energia.net/definiciones/sol.html
+
+De entre estas la crom\'osfera es una de las partes m\'as desconocidas para la ciencia hasta el momento. Su mayor misterio es que conforme la densidad decrementa, la temperatura en lugar de decrementar tambi\'en, incrementa. Este fen\'omeno se presenta a\'un m\'as radicalmente en una regi\'on particular conocida como regi\'on de transici\'on (TR por su nombre en ingl\'es "Transition Region"). Particularmente, en dicha regi\'on resulta inexplicable el cambio radical que pasa de $10^4$K a $10^5$ K en una distancia de 1000km (Vease figuras \ref{d_cromosfera} y \ref{t_cromosfera}, donde se ilustran los cambios de densidad y temperatura).
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.8]{densidad}
+\caption{ Perfil de densidad de Hidr\'ogeno, altura desde la Fot\'osfera utilizando el modelo C publicado por Vernazza (1981), para la Corona se toma el modelo de Gabriel (1976) (V de la Luz., 2011) }
+\label{d_cromosfera}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.8]{Temperatura}
+\caption{ Perfil de Temperatura, altura desde la Fot\'osfera utilizando el modelo C publicado por Vernazza (1981), para la Corona se toma el modelo de Gabriel (1976) (V de la Luz., 2011) }
+\label{t_cromosfera}
+\end{figure}
+
 
 Como se mencion\'o anteriormente, existen distintas teor\'ias que tratan de explicar el cambio radical de temperatura en esta regi\'on. Una de ellas (PENDIENTE, revisar fuente) adjudica cierta causalidad a los campos magn\'eticos. Esta teor\'ia cobra cierta plausibilidad cuando se observa el sol mediante un espectr\'ografo o alg\'un filtro que aisle la emisi\'on H-alpha, que nos permite observar nuevas caracter\'isticas en las regiones del sol. Estas observaciones se han facilitado con el advenimiento de muevos instrumentos que observan en el rango UV, tales como IRIS (Interface Region Imaging Spectrograph). Con estas nuevas tecnolog\'ias y observaciones se ha descubiero que la estructura de la atm\'osfera (y muy particularmente, de la crom\'osfera) contienen una distribuci\'on ca\'otica. Actualmente los modelos de promedios, como VALC o C7, y que son los m\'as utilizados, no capturan la complejidad ca\'otica del escenario real.
 
-Las nuevas tecnolog\'ias antes mencionadas nos han permitido entender mejor el comportamiento ca\'otico observado. Antes de su invenci\'on s\'olo pod\'iamos observar ciertas regiones del sol, como la crom\'osfera, durante un eclipse solar lo que limitaba nuestra investicaci\'on sobre la morfolog\'ia del sol. \'Unicamente se pod\'ia observar al sol durante los eclipses mencionados debido a que existe una capa muy brillante emitida por la fot\'osfera, que debido a su intensidad de brillo enmascara las emisiones del resto de las regiones solares; sin embargo, cuando la luz de la fot\'osfera es filtrada el resto de las regiones m\'as d\'ebiles desaparecen tambi\'en por completo.
+Las nuevas tecnolog\'ias antes mencionadas nos han permitido entender mejor el comportamiento ca\'otico observado. Antes de su invenci\'on s\'olo pod\'iamos observar ciertas regiones del sol, como la crom\'osfera, durante un eclipse solar lo que limitaba nuestra investicaci\'on sobre la morfolog\'ia del sol. \'Unicamente se pod\'ia observar al sol durante los eclipses mencionados debido a que existe una capa muy brillante emitida por la fot\'osfera, que a causa de su intensidad de brillo enmascara las emisiones del resto de las regiones solares; sin embargo, cuando la luz de la fot\'osfera es filtrada el resto de las regiones m\'as d\'ebiles desaparecen tambi\'en por completo.
 
 Hoy en d\'ia, con las nuevas tecnolog\'ias ya es posible la observaci\'on de detalles como la \emph{red cromosf\'erica}, donde se pueden observar peque\~nas estructuras de campos magneticos que pueden ayudar a explicar el comportamiento complejo concerniente.
 La red cromosf\'erica se puede definir como una estructura en forma de micro arcos que forman una red oscura (network) que envuelve celdas brillantes (cells). Esta red es visible en espectroheliogramas tomados en la l\'inea H-alpha a una longitud de onda de cerca de 656 nan\'ometros y en otras regiones espectrales \cite{NASAweb}. Esta red rodea las celdas super granulares y consiste en un patr\'on de larga escala donde el movimiento del gas en la crom\'osfera es guiado por pliegues magn\'eticos (figura \ref{fig:chromosphericnet}). Las propiedades de la red cromosf\'erica justifican la exploraci\'on causal de campos magn\'eticos de esta tesis.
 
 \begin{figure}[h]
-\caption{"Fuente: The Chromospheric Network Mayo 2017, NASA webpage oficial"}
+
 \centering
 \includegraphics[scale=0.3]{CAII3934}
+\caption{Fuente: The Chromospheric Network Mayo 2017, NASA p\'agina web oficial}
 \label{fig:chromosphericnet}
+\end{figure}
+
+\begin{figure}[h]
+
+\centering
+\includegraphics[scale=0.5]{chromospheric_network2}
+\caption{ Red cromosf\'erica solar observada desde el Telescopio Solar Sueco (Swedish Solar Telescope) en la l\'inea H Ca II.
+\newline Fuente: https://www.researchgate.net/figure/The-chromospheric-network-as-observed-with-the-Swedish-Solar-Telescope-in-the-Ca-II\_fig8\_259104617}
+\label{chromospheric_network2}
 \end{figure}
 
 %En la figura \ref{fig:chromosphericnet} se observa una imagen tomada en la l\'inea de c\'alcio de la red cromosf\'erica, mientras que en la figura 
 
 En a\~nadidura, las recientes observaciones del experimento VAULT (Very high Angular resolution ULtraviolet Telescope por sus siglas en ingl\'es) complementan la evidencia de una estructura ca\'otica cromosf\'erica y de la existencia de peque\~nos loops frios \cite{VAULT1}, los cu\'ales confirman la presencia de campos magn\'eticos.
 VAULT es un proyecto de exploraci\'on espacial que data de 1999 y que busca estudiar la conexi\'on entre la corona y la crom\'osfera solar al observar la l\'inea espectral m\'as fuerte del sol, la Ly$\alpha$ a 1216A.
-La resoluci\'on angular de subarcosegundos ($\approx$.3") permite ver directamente estructuras de la estructura de Sol Quieto. El parecido de los resultados entre los modelos y las observaciones indican que la explicaci\'on de las estructuras finas observadas en t\'erminos de loops frios es plausible.
+La resoluci\'on angular de subarcosegundos ($\approx$.3") permite ver directamente los peque\~nos loops f\'ios en la estructura de Sol Quieto. El parecido de los resultados entre los modelos y las observaciones indican que la explicaci\'on de las estructuras finas observadas en t\'erminos de loops frios es plausible.
 
 Como se muestra en la figura x CORREGIR las im\'agenes de vault nos permiten mejorar la calidad de nuestras observaciones, permiti\'endonos tener un mejor entendimiento de la composici\'on de la atm\'osfera solar (n\'otese tambi\'en la calidad de la figura Y).
 
 \begin{figure}[h]
-\caption{"Fuente: Vourlidas, et al., 2009"}
 \centering
 \includegraphics[scale=0.6]{vault_comparison}
+\caption{"Fuente: Vourlidas, et al., 2009"}
 \label{fig:vault_compare}
 \end{figure}
 
 \begin{figure}[h]
-\caption{"Fuente: Vourlidas, et al., 2009}
 \centering
 \includegraphics[scale=0.6]{vault_complete}
+\caption{"Fuente: Vourlidas, et al., 2009}
 \label{fig:vault_complete}
 \end{figure}
 
@@ -134,21 +171,28 @@ En relaci\'on con las limitaciones de PakalMPI, si bien este permite la entrada 
  
 Finalmente como concerniente a sus fortalezas, PakalMPI ha demostrado poder mejorar el tiempo de integraci\'on hasta por un orden de magnitud comparado a c\'odigos de integraci\'on lineal. Por ejemplo, en una prueba que utilizaba 32 procesadores de una m\'aquina Cray del CNS en san Luis Potos\'i, se generaron espectros sint\'eticos de 32 frecuencias, con pasos de integraci\'on de 1km del centro del disco solar en aproximadamente 3 segundos. Adem\'as, PakalMPI puede correr en clusters, supercomputadoras y computadoras personales. Los resultados de PakalMPI han sido probados por su robustez. Particularmente, se realizaron satisfactoriamente pruebas de convergencia y estabilidad de la parte num\'erica y del sistema experto, las cu\'ales son presentadas en De la Luz et al. 2010. Por \'ultimo, PakalMPI permite modelar computacionalmente modelos emp\'iricos, te\'oricos y semi emp\'iricos. 
 
-En esta tesis se propone una extensi\'on el m\'odulo de funciones f\'isicas, denominado Jaguar. Particularmente se agrega el efecto de los campos magn\'eticos a la ecuaci\'on de transferencia al agregar la componente de la presi\'on magn\'etica. Lo anterior convierte al modelo hidrodin\'amico que se usa actualmente en un modelo magnetohidrodin\'amico. Con esta adici\'on ahora (1) se puede generar un escenario m\'as apegado a las observaciones f\'isicas de la atm\'osfera solar, y (2) se facilita la adaptaci\'on del c\'odigo ante la adici\'on de cualquier modelo de campo magn\'etico. Con relaci\'on a esto \'ultimo, ahora se puede solo cambiar una peque\~na fracci\'on del c\'odigo (la parte donde se encuentra el modelo de campo magn\'etico) sin necesidad de alterar el core de PakalMPI . 
+En esta tesis se propone una extensi\'on en el m\'odulo de funciones f\'isicas (denominado Jaguar). Particularmente se agrega el efecto de los campos magn\'eticos a la ecuaci\'on de transferencia al agregar la componente de la presi\'on magn\'etica. Lo anterior convierte al modelo hidrodin\'amico que se usa actualmente en un modelo magnetohidrodin\'amico. Con esta adici\'on ahora (1) se puede generar un escenario m\'as apegado a las observaciones f\'isicas de la atm\'osfera solar, y (2) se facilita la adaptaci\'on del c\'odigo ante la adici\'on de cualquier modelo de campo magn\'etico. Con relaci\'on a esto \'ultimo, ahora se puede solo cambiar una peque\~na fracci\'on del c\'odigo (la parte donde se encuentra el modelo de campo magn\'etico) sin necesidad de alterar el core de PakalMPI . 
 
 
+\section{Sobre el Sol quieto y la emisi\'on submilim\'etrica solar}
+%La resoluci\'on angular de subarcosegundos ($\approx$.3") permite ver directamente estructuras de la estructura de Sol Quieto. El parecido de los resultados entre los modelos y las observaciones indican que la explicaci\'on de las estructuras finas observadas en t\'erminos de loops frios es plausible.
+Hist\'oricamente el concepto de Sol quieto se ha visto modificado, por lo que se recomienda al lector tener precauci\'on en asumir una consistencia conceptual en textos de diferentes tiempos. Hoy en d\'ia, este t\'ermino se refiere a dos conceptos. Primeramente se puede referir a las regiones del Sol que abarcan todas las regiones de campo magn\'etico cerrado (excluyendo las regiones activas), claramente demarcando el territorio de Sol quieto de los hoyos coronales, que abarca regiones de campo magn\'etico abierto.
+Segundamente, se refiere a un estado solar general que ocurre cada 11 a\~nos y se caracteriza por una actividad solar baja. Esta actividad solar baja b\'asicamente es equivalente a la primera definici\'on antes mencionada. En esta tesis cuando se utiliza el concepto de sol quieto, nos estamos refiriendo a la primer definici\'on, la cual describe el fen\'omeno solar de inter\'es. Se asume \'unicamente el estado de sol quieto debido a la complejidad del Sol activo. Sin embargo, el entendimiento del sol quieto tambi\'en nos ayudar\'ia a entender mejor el Sol Activo. Concretamente, la correcta caracterizaci\'on del Sol Quieto nos permitir\'ia entender el fondo de radiaci\'on del Sol Activo.
 
+Una caracter\'istica relevante del Sol quieto para esta tesis es el de la intensidad de sus campos magn\'eticos. Particularmente los campos magn\'eticos en Sol quieto, medidos seg\'un las l\'ineas espectrales de Zeeman, contienen un campo de B== .1 - .5G, mientras que sus fuerzas absolutas de campo en elementos resueltos var\'ian entre B = 10-50G. Estos valores se utilizan en el modelo computacional propuesto en este texto.
 
+Existe una dificultad en medir las magnitudes concretas de los campos magn\'eticos del Sol quieto debido a corrientes desconocidas y condiciones no libres de fuerza. Lo anterior ocasiona que se tengan que calcular extrapolaciones a lo largo de la crom\'osfera y la regi\'on de transici\'on para obtener valores aproximados. Sin embargo, estas mediciones extrapoladas contienen ruidos, lo que las hace imprecisas. Lo anterior justifica que el modelo presentado en esta tesis tome valores de campos magn\'eticos no concretos.
 
-\chapter{Emisi\'on submilim\'etrica solar}
-Mecanismos de la emisi\'on milim\'etrica del plasma del sol quieto, antecedente hist\'orico y enfoque del problema a resolver (qu\'e se va a hacer, por qu\'e se va a hacer y c\'omo se va a a hacer)
+Otra caracter\'istica importante del Sol quieto para esta tesis es la emisi\'on milim\'etrica del plasma. Se ha comprobado que la observaci\'on de la emisi\'on milim\'etrica del plasma en Sol Quieto es equivalente a observar la totalidad de las emisiones de la Crom\'osfera Solar cuando est\'a en el estado solar de Sol Quieto 2000ESASP.463..363L. Con la emisi\'on milim\'etrica se puede aproximar el grado de ionizaci\'on de toda la atm\'osfera solar; y con esta \'ultima se pueden inferir aproximaciones de la temperatura, la densidad y la presi\'on que hay en ella. Estas \'ultimas aproximaciones se realizan seg\'un diferentes modelos; los cuales se pueden conceptualizar como emp\'iricos, semi-emp\'iricos y observacionales. 
 
-Estos mecanismos consisten en transiciones at\'omicas (que pueden ser ionizantes, de recombinaci\'on y tipo ligado-ligado) y mecanismos de emisi\'on libre-libre como radiaci\'on \emph{bremsstrahlung} y radiaci\'on sincrotr\'onica.
+Independientemente del tipo de modelo, por definici\'on, todos tienen limitaciones en sus c\'alculos de temperatura, densidad y presi\'on. En el modelo propuesto, se busca robustecer el modelo PakalMPI de V\'ictor de la Luz mediante la anexi\'on de el efecto te\'orico de los campos magn\'eticos. Esta anexi\'on se puede justificar, por diferentes teor\'ias y observaciones. Por ejemplo, un estudio reciente por Meunier (2018) propone que las peque\~nas regiones de campo magn\'etico contribuyen significamente a la emisi\'on cromosf\'erica y por consiguiente a la emisi\'on milim\'etrica. Lo anterior, como se explic\'o con anterioridad, afectar\'ia a los c\'alculos de la temperatura, la densidad y la presi\'on de la crom\'osfera; haci\'endolos te\'oricamente m\'as precisos.
 
   
-\chapter{Modelo de Micro estrucras magneticas solares}
-\section{Caracteristicas Fisicas}
+\chapter{Extensi\'on al modelo Pakal - micro estructuras magn\'eticas solares}
 
+                                                                                       
+
+\section{Caracteristicas Fisicas}
 
 Debido a las observaciones de espiculas es que se decidi\'o considerar el modelo de flujo emergente
 
@@ -233,7 +277,14 @@ resultados de las simulaciones para flujo emergente
 
 \chapter{Discusi\'on y conclusiones}
 Comparaci\'on entre ambos modelos, discusion y resultados
-hola Springer Science \& Business Media, Aug 26, 2006
+hola 
+
+%Existen algunos de los códigos escritos para condiciones muy espec\'ificas, por ejemplo, tenemos a: STERNE3 (Behara & Jeffery, 2006) para estrellas %deficientes en Hidrógeno, LINE-BY-LINE METHOD (Shulyak et al., 2004) para estrellas en etapas tempranas e intermedias, PRO2 (Werner, 1986) y TLUSTY %(Hubeny & Lanz, 1995) para estrellas calientes, WM-basic (Pauldrach et al., 2001) para atmósferas en expansión, CMFGEN (Hillier & Miller, 1998) para estrellas tipo Wolf-Rayet y FASTWIND (Santolaya-Rey et al., 1997) para estrellas con alta pérdida de masa. 
+%Sin embargo, aun con la variedad de códigos existentes, no existe un código de generación de espectros sintéticos especializado en la región milimétrica, submilimétrica e infrarroja (es decir, en condiciones fı́sicas cromosfericas) para estrellas del tipo solar.
+
+
+
+Springer Science \& Business Media, Aug 26, 2006
 
 \begin{thebibliography}{9}
 
