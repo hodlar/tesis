@@ -96,73 +96,64 @@
   \setcounter{page}{1}
   \renewcommand{\tablename}{Tabla}
 
+\frontmatter
+\tableofcontents
+
+
+\mainmatter
  \chapter{Introducci\'on}
 
 
+El estudio del Sol ha resultado indispensable para el desarrollo de la humanidad. En la antig\"uedad, por ejemplo, la observaci\'on del Sol permiti\'o a los humanos generar el modelo de estaciones del a\~no; el cual nos permiti\'o realizar predicciones sobre, entre muchas otras cosas, la agricultura y los mejores tiempos para emprender largos viajes. Hoy en d\'ia, el estudio del Sol est\'a indisolublemente relacionado con el progreso de nuestras tecnolog\'ias. Por ejemplo, se puede decir que la actividad del Sol, particularmente de su atm\'osfera tienen una relaci\'on directa con nuestros avances aeroespaciales y en materia de telecomunicaciones.
 
+El estudio de \'esta resulta importante, pues como ha ocurri\'do con anterioridad, la actividad solar puede incluso llegar a da\~nar nuestro sistemas de telecomunicaciones \cite{carrington}. Principalmente, el mayor desconcierto que existe con el comportamiento de la actividad solar son los repentinos y radicales abillantamientos conocidos como r\'fagas solares que son eventos en donde se aceleran cargas el\'ectricas y se producen descomunales cantidades de energ\'a de t\'ipicamente d $10^{32}$~ergs en forma radiante, en forma t\'ermica y en forma cin\'etica respectivamente. A su vez, las r\'afagas solares usualmente anteceden a fen\'omenos de mayor escala conocidos como Eyecciones de Masa Coronal, que son desprendimientos de grande porciones de la atm\'osfera externa del Sol y que se proyectan al medio interplanetario, donde eventualmente pueden arribar a la Tierra causando potenciales desastres naturales y tecnol\'ogicos como los descritos en~\cite{carrington}
 
-El estudio del Sol ha resultado indispensable para el desarrollo de la humanidad. En la antig\"uedad, por ejemplo, la observaci\'on del Sol permiti\'o a los humanos generar el modelo de estaciones del a\~no; el cual nos permiti\'o realizar predicciones sobre, entre muchas otras cosas, la agricultura y los mejores tiempos para emprender largos viajes. Hoy en d\'ia, el estudio del Sol nos resulta tambi\'en indispensable para seguir progresando en nuestras tecnolog\'ias. Por ejemplo, se puede decir que las propiedades y los efectos del Sol tienen una relevancia directa con nuestros avances aeroespaciales y en materia de telecomunicaci\'on. Sin embargo, contrario a la antig\"uedad donde nuestras necesidades se satisfac\'ian con conocimientos relativamente simples, nuestras tecnolog\'ias de hoy en d\'ia requieren de informaci\'on y modelos muy complejos sobre El Sol y su comportamiento, los cuales no son f\'acilmente obtenibles ni conceptualizables.
+Es as\'i como el estudio del estado f\'isico de la atm\'osfera solar conlleva a importantes cuestionamientos y avances en la descripci\'on del modo en c\'omo se genera y se transporta energ\'ia a trav\'es de \'esta.
 
-Uno de los fen\'omenos que a\'un esquiva al entendimiento preciso de la comunidad cient\'ifica es el del comportamiento de la crom\'osfera solar. El estudio de este fen\'omeno resulta importante, entre cosas, pues,  como ocurri\'o con anterioridad, la actividad solar puede incluso llegar a da\~nar nuestro sistemas de comunicaci\'on \cite{carrington}. Principalmente, el mayor desconcierto que existe con el comportamiento de la crom\'osfera son las repentinas y radicales variaciones en su temperatura.
+Sin embargo, hasta el momento, a la disciplina de la f\'isica solar le ha resultado imposible desarrollar un modelo preciso que prediga el comportamiento de la atm\'osferma solar. Esto se debe a que a\'un no se posee de un conocimiento certero de la f\'isica de la atm\'osfera solar. Algunos te\'oricos han argumentado que las repentinas y radicales variaciones de la atm\'osfera solar son causadas por inestabilidades de los campos magn\'eticos ah\'i presentes \cite{chromotemp}. Considerando lo anterior, en esta tesis se estudia emp\'iricamente dicha teor\'ia a trav\'es de una extensi\'on de un modelo de simulaci\'on computacional.
 
-Hasta el momento, a la disciplina de la f\'isica solar le ha resultado imposible desarrollar un modelo preciso sobre el comportamiento de la crom\'osfera. Esto se debe a que a\'un se desconocen las causas y condiciones reales del comportamiento de esta regi\'on solar. Algunos te\'oricos han argumentado que las repentinas y radicales variaciones de la crom\'osfera son influenciadas por los efectos de los campos magn\'eticos ah\'i presentes \cite{chromotemp}. Considerando lo anterior, en esta tesis se estudia emp\'iricamente dicha teor\'ia a trav\'es de una extensi\'on de un modelo de simulaci\'on computacional.
+Precisamente, esta tesis extiende el presente conocimiento en f\'isica solar mediante dos principales contribuciones. La primera contribuci\'on reside en proveer evidencia parcial y exploratoria, a trav\'es de una simulaci\'on computacional,  que las variaciones repentinas y radicales de la crom\'osfera se deben al efecto de los campos magn\'eticos de los niveles cromosf\'ericos y coronales. La segunda contribuci\'on se halla en la extensi\'on de un modelo de simulaci\'on computacional existente para que considere el efecto de los campos magn\'eticos mismos. Con relaci\'on a esta segunda contribuci\'on, se extiende particularmente el modelo de simulaci\'on computacional llamado Pakal empleado para diagnosticar la emisi\'on milim\'etrica y submilim\'etricas proveniente de niveles coronales~\cite{2010ApJS..188..437D}.
 
-Precisamente, esta tesis extiende el conocimiento en f\'isica solar mediante dos principales contribuciones. La primera contribuci\'on reside en proveer evidencia parcial y exploratoria, a trav\'es de una simulaci\'on computacional, que sugiere que las variaciones repentinas y radicales de la crom\'osfera pueden deberse al efecto de los campos magn\'eticos. La segunda contribuci\'on se halla en la extensi\'on de un modelo de simulaci\'on computacional existente para que considere el efecto de los campos magn\'eticos. Con relaci\'on a esta segunda contribuci\'on, se extiende particularmente el modelo de simulaci\'on computacional llamado PAKALMPI. 
-
-Actualmente, el c\'odigo de PAKALMPI realiza sus modelos de simulaci\'on sin considerar el efecto de los campos magn\'eticos en el c\'alculo de la densidad del plasma de la crom\'osfera. Esto ocasiona que sus resultados sobre la densidad no sean del todo precisos en comparaci\'on con las observaciones reales. Mediante la extensi\'on del c\'odigo propuesta en esta tesis, se le posibilita a PAKALMPI la capacidad de considerar el efecto de los campos magn\'eticos. Como resultado, sus aproximaciones a la densidad observada son m\'as precisos. Lo anterior puede ayudar a entender mejor las variaciones repentinas y radicales observables en la temperatura de la crom\'osfera. Y como se mencion\'o anteriormente, sugiere que hay evidencia muy parcial y exploratoria del efecto de los campos magn\'eticos en el comportamiento de la crom\'osfera.
-
-En las siguientes secciones de este escrito se detallar\'a la teorizaci\'on y matematizaci\'on de la extensi\'on propuesta y realizada al modelo de simulaci\'on computacional PAKALMPI. Concretamente, esta tesis tiene la siguiente estructura. En la siguiente subsecci\'on. En la secci\'on 2, se aborda  en general. En la subsecci\'on 2.1
-
+Actualmente, el c\'odigo de Pakal realiza sus modelos de simulaci\'on sin considerar el efecto de los campos magn\'eticos en el c\'alculo de la densidad del plasma de la crom\'osfera. Esto ocasiona que sus resultados sobre la densidad no sean del todo precisos en comparaci\'on con las observaciones reales. Mediante la extensi\'on del c\'odigo propuesta en esta tesis, se le posibilita a Pakal la capacidad de considerar el efecto de los campos magn\'eticos. Como resultado, sus aproximaciones a la densidad observada son m\'as precisos. Lo anterior puede ayudar a entender mejor las variaciones repentinas y radicales observables en la temperatura de la crom\'osfera. Y como se mencion\'o anteriormente, sugiere que hay evidencia muy parcial y exploratoria del efecto de los campos magn\'eticos en el comportamiento de la crom\'osfera.
 
 
 
+\chapter{Estructuras de micro-escala en la cromosfera solar}
 
-
-\chapter{Marco te\'orico}
-
-\section{Estructuras de micro-escala en la cromosfera solar}
-%Esto lo dijo victor
-%observaciones de la red cromosfericas y del experimento VAULT.
-%
-
-La atm\'osfera solar se puede dividir en las siguientes capas: la fot\'osfera, crom\'osfera, regi\'on de transici\'on y la corona solar. Cada una de estas regiones tiene diferentes propiedades y caracter\'isticas, las cuales se sintetizan en la figura \ref{atmosfera_solar}.
+La atm\'osfera solar se divide en las siguientes capas: la fot\'osfera, crom\'osfera, regi\'on de transici\'on y la corona solar. Cada una de estas regiones poseen distintos reg\'imenes de densidad y temperatura ilustr\'andose en la figura \ref{atmosfera_solar}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=.5]{atmosfera}
-\caption{ Representaci\'on gr\'afica de las capas del sol (no se encuentra a escala). \newline
+\caption{Ilustraci\'on de la estructura de la atm\'osfera del Sol (adaptado de~\cite{1979NASSP.402.....E}). \newline
 *Existe debate sobre si la regi\'on de transici\'on es una regi\'on por s\'i misma o forma parte de la Crom\'osfera. Independientemente de esto, se localizar\'ia entre la Crom\'osfera y la Corona Solar. \newline
 $^{a}$ https://www.nasa.gov/mission\_pages/iris/multimedia/layerzoo.html \newline
 $^{b}$ https://solarscience.msfc.nasa.gov/interior.shtml}
 \label{atmosfera_solar}
 \end{figure}
 
+La atm\'osfera solar est\'a descrita b\'asicamente por la f\'isica de un plasma magnetizado. El estado del plasma y/o su interacci\'on con el campo magn\'etico establecen mecanismos de emisi\'on en pr\'acticamente todo el espectro electromagn\'etico. Estos mecanismos consisten en trancisiones at\'omicas (que pueden ser ionizantes, de recombinaci\'on y tipo ligado-ligado) y mecanismos de emisi\'on libre-libre como radiaci\'on \emph{bremsstrahlung}, radiaci\'on sincrotr\'onica y radiaci\'on plasma.
 
-%https://solar-energia.net/definiciones/sol.html
+La atm\'osfera solar se extiende desde los niveles fotos\'ericos hasta el medio coronal pasando por el medio cromosf\'erico, involucrando un rango de longitud de $1R_{\odot}$--$3R_{\odot}$. La \emph{fot\'osfera} se constituye de granulos convectivos de peque\~na escala ($10^3$~km), separados de entre s\'i por capas intergranulares, las cuales concentran elementos de alto flujo magn\'etico ($|B| \le 1\mbox{kG}$). La escala temporal de la ocurrencia de un gr\'anulo es de unos minutos aproximadamente. La \emph{crom\'osfera} (fig. \ref{fig:chromosphericnet}) es una capa que se extiende por alrededor de $2\times 10^3$~km. Emite copiosamene en la l\'inea espectral H$\alpha$ ($\lambda=6563~\AA$) y ultravioleta. Similarmente a la fot\'osfera, la base de la crom\'osfera presenta gr\'anulos con una escala de tama\~no relativamente mayor concentrando flujo magn\'etico, el cual est\'a asociado en unos casos con flujos verticales de plasma llamados \emph{esp\'iculas} o a microarcos magn\'eticos en otros casos~\cite{NASAweb}. M\'as all\'a de la base de la crom\'osfera cambia la condici\'on en la presi\'on dominante, ya que mientras la presi\'on del gas domina a niveles fotosfericos, a estos niveles esta condici\'on se invierte y las distribuciones de brillo observadas est\'an dominadas por la geometr\'ia del campo magn\'etico. 
 
-De entre estas la crom\'osfera es una de las partes m\'as desconocidas para la ciencia hasta el momento. Su mayor misterio es que conforme la densidad decrementa, la temperatura en lugar de decrementar tambi\'en, incrementa. Este fen\'omeno se presenta a\'un m\'as radicalmente en una regi\'on particular conocida como regi\'on de transici\'on (TR por su nombre en ingl\'es "Transition Region"). Particularmente, en dicha regi\'on resulta inexplicable el cambio radical que pasa de $10^4$K a $10^5$ K en una distancia de 1000km (Vease figuras \ref{d_cromosfera} y \ref{t_cromosfera}, donde se ilustran los cambios de densidad y temperatura).
+%Por su parte, la \emph{corona} es una de las partes de la atm\'osfera m\'as desconocidas para la ciencia hasta el momento. Su mayor misterio es que conforme la densidad decrementa, la temperatura en lugar de decrementar tambi\'en se incrementa. Este fen\'omeno se presenta a\'un m\'as radicalmente en una capa que antecede a la Corona conocida como la regi\'on de transici\'on (TR por su nombre en ingl\'es "Transition Region"). Particularmente, en dicha regi\'on a\'un no est\'a claramente explicado el cambio radical que pasa de $10^4$K a $10^5$ K en una distancia de $1000$~km (v\'ease fig.~\ref{atmosfera_solar}).
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.8]{densidad}
-\caption{ Perfil de densidad de Hidr\'ogeno, altura desde la Fot\'osfera utilizando el modelo C publicado por Vernazza (1981), para la Corona se toma el modelo de Gabriel (1976) (V de la Luz., 2011) }
-\label{d_cromosfera}
-\end{figure}
+El rango de temperaturas implicado en este cambio de morfolog\'ia, de gr\'anulos a estructuras filamentarias magn\'eticas (\emph{loops}) es de $2\times 10^5~\mbox{K} < T < 10^6~\mbox{K}$
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.8]{Temperatura}
-\caption{ Perfil de Temperatura, altura desde la Fot\'osfera utilizando el modelo C publicado por Vernazza (1981), para la Corona se toma el modelo de Gabriel (1976) (V de la Luz., 2011) }
-\label{t_cromosfera}
-\end{figure}
+El escenario anterior propone que, a trav\'es de las ep\'iculas se establece un mecanismo continuo de transferencia de material y energ\'ia hacia la corona solar, por lo que se han propuesto modelos que expliquen tanto la din\'amica y estructura t\'ermica de una condici\'on conocida como \emph{Sol Quieto}, en referencia a regiones del Sol que exentas de cualquier manifestaci\'on de actividad observable. Modelos est\'aticos de atm\'osferas referentes, son los desarrollados por Vernazza et al. 1991 (VAL), Fontenla et al. 1993 y Avrett y Loeser 2008 (C7). En ellos, se ajusta una atm\'osfera hidrost\'atica, promediando propiedades estratificadas,  aproximaci\'on plano-paralela, hasta reproducir el correspondiente espectro emergente para un conjunto de observaciones seleccionadas. A\'un cuando la f\'isica de aquellos modelos es bastante realista, no toma en cuenta la din\'amica a escala angular menor al poder de resoluci\'on de las observaciones comparadas con los modernos instrumentos de hoy. 
 
+Con el advenimiento de instrumentos que observan en el rango UV, tales como IRIS (Interface Region Imaging Spectrograph) muestra que la estructura de la atm\'osfera (y muy particularmente, de la crom\'osfera) es tan ca\'oticamente distribuida, que un modelo que promedie propiedades como en el p\'arrafo anterior no puede capturar la complejidad del escenario real.
 
-Como se mencion\'o anteriormente, existen distintas teor\'ias que tratan de explicar el cambio radical de temperatura en esta regi\'on. Una de ellas (PENDIENTE, revisar fuente) adjudica cierta causalidad a los campos magn\'eticos. Esta teor\'ia cobra cierta plausibilidad cuando se observa el sol mediante un espectr\'ografo o alg\'un filtro que aisle la emisi\'on H-alpha, que nos permite observar nuevas caracter\'isticas en las regiones del sol. Estas observaciones se han facilitado con el advenimiento de muevos instrumentos que observan en el rango UV, tales como IRIS (Interface Region Imaging Spectrograph). Con estas nuevas tecnolog\'ias y observaciones se ha descubiero que la estructura de la atm\'osfera (y muy particularmente, de la crom\'osfera) contienen una distribuci\'on ca\'otica. Actualmente los modelos de promedios, como VALC o C7, y que son los m\'as utilizados, no capturan la complejidad ca\'otica del escenario real.
+Carlsson y Sten (1994) modelan bidimensionalmente la emisi\'on emergente t\'ermica libre-libre cromosf\'erica a longitudes de onda milim\'etricas y sub-milim\'etricas. La temperatura de brillo resultante var\'ia sensiblemente en el tiempo debido a la propagaci\'on de ondas de choque y modos de oscilaci\'on, contabilizando una complejidad m\'as realista para la temperatura local del gas en las capas de formaci\'on del continuo de emisi\'on. Las escalas angulares involucradas en estos resultados est\'an por debajo de los 0.1''. Asi, la emisi\'on milim\'etrica y submilim\'etrica dependen fuertemente. Loukitcheva et al. 2004 refieren que las el escenario din\'amico de la estructura cromosf\'erica es consistente con la emisi\'on milim\'etrica y submilim\'etrica observada.
 
-Las nuevas tecnolog\'ias antes mencionadas nos han permitido entender mejor el comportamiento ca\'otico observado. Antes de su invenci\'on s\'olo pod\'iamos observar ciertas regiones del sol, como la crom\'osfera, durante un eclipse solar lo que limitaba nuestra investicaci\'on sobre la morfolog\'ia del sol. \'Unicamente se pod\'ia observar al sol durante los eclipses mencionados debido a que existe una capa muy brillante emitida por la fot\'osfera, que a causa de su intensidad de brillo enmascara las emisiones del resto de las regiones solares; sin embargo, cuando la luz de la fot\'osfera es filtrada el resto de las regiones m\'as d\'ebiles desaparecen tambi\'en por completo.
+Son estas propiedades de la red cromosf\'erica que justifican la exploraci\'on causal de campos magn\'eticos de esta tesis.
 
-Hoy en d\'ia, con las nuevas tecnolog\'ias ya es posible la observaci\'on de detalles como la \emph{red cromosf\'erica}, donde se pueden observar peque\~nas estructuras de campos magneticos que pueden ayudar a explicar el comportamiento complejo concerniente.
-La red cromosf\'erica se puede definir como una estructura en forma de micro arcos que forman una red oscura (network) que envuelve celdas brillantes (cells). Esta red es visible en espectroheliogramas tomados en la l\'inea H-alpha a una longitud de onda de cerca de 656 nan\'ometros y en otras regiones espectrales \cite{NASAweb}. Esta red rodea las celdas super granulares y consiste en un patr\'on de larga escala donde el movimiento del gas en la crom\'osfera es guiado por pliegues magn\'eticos (figura \ref{fig:chromosphericnet}). Las propiedades de la red cromosf\'erica justifican la exploraci\'on causal de campos magn\'eticos de esta tesis.
+Si bien, en comparaci\'on con los modelos din\'amicos mencionados arriba, los modelos est\'aticos han sido escasamente estudiados, un ejemplo es \emph{PakalMPI} (De la Luz 2010) es un c\'odigo que resuelve la ecuaci\'on de transferencia radiativa en tres dimensiones en una aproximaci\'on plano-paralela, cuya estratificaci\'on sigue perfiles conocidos de densidad y temperatura...
+
+En este trabajo se basa los modelos semi-emp\'iricos VAL y C7, lo cuales, bajo determinadas modificaciones se introducen en c\'odigo \emph{PakalMPI}...
+
+Mencionar a ALMA
+
 
 \begin{figure}[h]
 
@@ -183,11 +174,11 @@ La red cromosf\'erica se puede definir como una estructura en forma de micro arc
 
 %En la figura \ref{fig:chromosphericnet} se observa una imagen tomada en la l\'inea de c\'alcio de la red cromosf\'erica, mientras que en la figura 
 
-En a\~nadidura, las recientes observaciones del experimento VAULT (Very high Angular resolution ULtraviolet Telescope por sus siglas en ingl\'es) complementan la evidencia de una estructura ca\'otica cromosf\'erica y de la existencia de peque\~nos loops frios \cite{VAULT1}, los cu\'ales confirman la presencia de campos magn\'eticos.
+En a\~nadidura, las  observaciones del experimento VAULT (Very high Angular resolution ULtraviolet Telescope por sus siglas en ingl\'es) complementan la evidencia de una estructura ca\'otica cromosf\'erica y de la existencia de peque\~nos loops frios \cite{VAULT1}, los cu\'ales confirman la presencia de campos magn\'eticos.
 VAULT es un proyecto de exploraci\'on espacial que data de 1999 y que busca estudiar la conexi\'on entre la corona y la crom\'osfera solar al observar la l\'inea espectral m\'as fuerte del sol, la Ly$\alpha$ a 1216A.
 La resoluci\'on angular de subarcosegundos ($\approx$.3") permite ver directamente los peque\~nos loops f\'ios en la estructura de Sol Quieto. El parecido de los resultados entre los modelos y las observaciones indican que la explicaci\'on de las estructuras finas observadas en t\'erminos de loops frios es plausible.
 
-Como se muestra en la figura x CORREGIR las im\'agenes de vault nos permiten mejorar la calidad de nuestras observaciones, permiti\'endonos tener un mejor entendimiento de la composici\'on de la atm\'osfera solar (n\'otese tambi\'en la calidad de la figura Y).
+Como se muestra en la figura \ref{fig:vault_compare} las im\'agenes de vault nos permiten mejorar la calidad de nuestras observaciones, permiti\'endonos tener un mejor entendimiento de la composici\'on de la atm\'osfera solar (n\'otese tambi\'en la calidad de la figura Y).
 
 \begin{figure}[h]
 \centering
@@ -205,19 +196,19 @@ Como se muestra en la figura x CORREGIR las im\'agenes de vault nos permiten mej
 
 
 
-\section{El c\'odigo \emph{PakalMPI}}
+\section{El c\'odigo \emph{Pakal}}
 %Descripci\'on del c\'odigo, puntualmente hay qu\'e explicar primero para qu\'e sirve actualmente y a partir de ello, plantear las modificaciones.
-Como se mencion\'o anteriormente, esta tesis busca extender el c\'odigo PakalMPI. Este programa fue constru\'ido por Victor de la Luz en el a\~no 2011\cite{PAKAL}. Dicho programa es un modelo num\'erico inovador que pretende resolver la ecuaci\'on de transferencia radiativa en una geometr\'ia tridimensional (3D), usando una aproximaci\'on para una atm\'osfera localmente plano paralelo; lo anterior utilizando un sistema inteligente. Con este programa se generan las capas estratificadas de la atm\'osfera en una estructura l\'ogica. La salida del c\'odigo puede ser en forma de mapas bi-dimensionales o un perfil de una dimensi\'on, que reproduce las observaciones con alta presici\'on, dando informaci\'on f\'isica detallada acerca del entorno donde la radiaci\'on fue generada y/o transmitida.
+Como se mencion\'o anteriormente, esta tesis busca extender el c\'odigo Pakal. Este programa fue constru\'ido por Victor de la Luz en el a\~no 2011\cite{Pakal}. Dicho programa es un modelo num\'erico inovador que pretende resolver la ecuaci\'on de transferencia radiativa en una geometr\'ia tridimensional (3D), usando una aproximaci\'on para una atm\'osfera localmente plano paralelo; lo anterior utilizando un sistema inteligente. Con este programa se generan las capas estratificadas de la atm\'osfera en una estructura l\'ogica. La salida del c\'odigo puede ser en forma de mapas bi-dimensionales o un perfil de una dimensi\'on, que reproduce las observaciones con alta presici\'on, dando informaci\'on f\'isica detallada acerca del entorno donde la radiaci\'on fue generada y/o transmitida.
 
 Pakal se encuentra dividido en cuatro distintos m\'odulos: El modelo num\'erico, la geometr\'ia, los m\'etodos num\'ericos y las funciones f\'isicas. Estos cuatro m\'odulos pueden ser modificados independientemente sin afectar el funcionamiento de los otros. En esta tesis se modifica el m\'odulo de las funciones f\'isicas donde se resuelve la ecuaci\'on de transferencia.
 
-Como todo modelo, PakalMPI est\'a basado en una serie de supuestos que le brindan una serie de fortalezas, pero tambi\'en una serie de limitantes; las cuales se presentar\'an a continuaci\'on. Con relaci\'on a sus supuestos, PakalMPI presenta un modelo aplicado a una geometr\'ia solar radial 3D, asumiendo una atm\'osfera local plano-paralela, y una emisi\'on t\'ermica de radio libre-libre de gas hidr\'ogeno-helio en equilibrio termodin\'amico. Para sus c\'alculos Pakal asume un grosor de la Crom\'osfera de 2200km. Adem\'as tambi\'en utiliza perfiles radiativos precalculados de densidad y temperatura (basado en modelos hidrost\'aticos, hidrodin\'amicos o MHD) para calcular la emisi\'on de una fuente de estructuras 3D con alta resoluci\'on espacial. En todo momento PakalMPI asume un estado de Sol Quieto y la ausencia de campos magn\'eticos. El t\'ermino Sol Quieto hace referencia a regiones del Sol que se encuentran exentas de cualquier manifestaci\'on de actividad observable. Con los supuestos antes mencionados, el programa concerniente resuelve la ecuaci\'on de transferencia radiativa en un conjunto de l\'ineas dirigidas de la fuente al observador.
+Como todo modelo, Pakal est\'a basado en una serie de supuestos que le brindan una serie de fortalezas, pero tambi\'en una serie de limitantes; las cuales se presentar\'an a continuaci\'on. Con relaci\'on a sus supuestos, Pakal presenta un modelo aplicado a una geometr\'ia solar radial 3D, asumiendo una atm\'osfera local plano-paralela, y una emisi\'on t\'ermica de radio libre-libre de gas hidr\'ogeno-helio en equilibrio termodin\'amico. Para sus c\'alculos Pakal asume un grosor de la Crom\'osfera de 2200km. Adem\'as tambi\'en utiliza perfiles radiativos precalculados de densidad y temperatura (basado en modelos hidrost\'aticos, hidrodin\'amicos o MHD) para calcular la emisi\'on de una fuente de estructuras 3D con alta resoluci\'on espacial. En todo momento Pakal asume un estado de Sol Quieto y la ausencia de campos magn\'eticos. El t\'ermino Sol Quieto hace referencia a regiones del Sol que se encuentran exentas de cualquier manifestaci\'on de actividad observable. Con los supuestos antes mencionados, el programa concerniente resuelve la ecuaci\'on de transferencia radiativa en un conjunto de l\'ineas dirigidas de la fuente al observador.
 
-En relaci\'on con las limitaciones de PakalMPI, si bien este permite la entrada de observaciones, no est\'a basado en ellas, y por lo tanto los resultados que no representan por completo las caracter\'isticas f\'isicas. De igual forma, PakalMPI se encuentra limitado a la fot\'osfera y crom\'osfera, esto debido a que estas regiones presentan una baja actividad magn\'etica lo cu\'al permite despeciarla; contrario a lo que ocurrir\'ia en la corona solar. PakalMPI tambi\'en omite la emisi\'on \emph{gyrosynchrotron} al despreciar los campos magn\'eticos. Finalmente, el c\'odigo de PakalMPI no logra reproducir en un 100\% las funci\'ones de densidad y temperatura del plasma solar.
+En relaci\'on con las limitaciones de Pakal, si bien este permite la entrada de observaciones, no est\'a basado en ellas, y por lo tanto los resultados que no representan por completo las caracter\'isticas f\'isicas. De igual forma, Pakal se encuentra limitado a la fot\'osfera y crom\'osfera, esto debido a que estas regiones presentan una baja actividad magn\'etica lo cu\'al permite despeciarla; contrario a lo que ocurrir\'ia en la corona solar. Pakal tambi\'en omite la emisi\'on \emph{gyrosynchrotron} al despreciar los campos magn\'eticos. Finalmente, el c\'odigo de Pakal no logra reproducir en un 100\% las funci\'ones de densidad y temperatura del plasma solar.
  
-Finalmente como concerniente a sus fortalezas, PakalMPI ha demostrado poder mejorar el tiempo de integraci\'on hasta por un orden de magnitud comparado a c\'odigos de integraci\'on lineal. Por ejemplo, en una prueba que utilizaba 32 procesadores de una m\'aquina Cray del CNS en san Luis Potos\'i, se generaron espectros sint\'eticos de 32 frecuencias, con pasos de integraci\'on de 1km del centro del disco solar en aproximadamente 3 segundos. Adem\'as, PakalMPI puede correr en clusters, supercomputadoras y computadoras personales. Los resultados de PakalMPI han sido probados por su robustez. Particularmente, se realizaron satisfactoriamente pruebas de convergencia y estabilidad de la parte num\'erica y del sistema experto, las cu\'ales son presentadas en De la Luz et al. 2010. Por \'ultimo, PakalMPI permite modelar computacionalmente modelos emp\'iricos, te\'oricos y semi emp\'iricos. 
+Finalmente como concerniente a sus fortalezas, Pakal ha demostrado poder mejorar el tiempo de integraci\'on hasta por un orden de magnitud comparado a c\'odigos de integraci\'on lineal. Por ejemplo, en una prueba que utilizaba 32 procesadores de una m\'aquina Cray del CNS en san Luis Potos\'i, se generaron espectros sint\'eticos de 32 frecuencias, con pasos de integraci\'on de 1km del centro del disco solar en aproximadamente 3 segundos. Adem\'as, Pakal puede correr en clusters, supercomputadoras y computadoras personales. Los resultados de Pakal han sido probados por su robustez. Particularmente, se realizaron satisfactoriamente pruebas de convergencia y estabilidad de la parte num\'erica y del sistema experto, las cu\'ales son presentadas en De la Luz et al. 2010. Por \'ultimo, Pakal permite modelar computacionalmente modelos emp\'iricos, te\'oricos y semi emp\'iricos. 
 
-En esta tesis se propone una extensi\'on en el m\'odulo de funciones f\'isicas (denominado Jaguar). Particularmente se agrega el efecto de los campos magn\'eticos a la ecuaci\'on de transferencia al agregar la componente de la presi\'on magn\'etica. Lo anterior convierte al modelo hidrodin\'amico que se usa actualmente en un modelo magnetohidrodin\'amico. Con esta adici\'on ahora (1) se puede generar un escenario m\'as apegado a las observaciones f\'isicas de la atm\'osfera solar, y (2) se facilita la adaptaci\'on del c\'odigo ante la adici\'on de cualquier modelo de campo magn\'etico. Con relaci\'on a esto \'ultimo, ahora se puede solo cambiar una peque\~na fracci\'on del c\'odigo (la parte donde se encuentra el modelo de campo magn\'etico) sin necesidad de alterar el core de PakalMPI . 
+En esta tesis se propone una extensi\'on en el m\'odulo de funciones f\'isicas (denominado Jaguar). Particularmente se agrega el efecto de los campos magn\'eticos a la ecuaci\'on de transferencia al agregar la componente de la presi\'on magn\'etica. Lo anterior convierte al modelo hidrodin\'amico que se usa actualmente en un modelo magnetohidrodin\'amico. Con esta adici\'on ahora (1) se puede generar un escenario m\'as apegado a las observaciones f\'isicas de la atm\'osfera solar, y (2) se facilita la adaptaci\'on del c\'odigo ante la adici\'on de cualquier modelo de campo magn\'etico. Con relaci\'on a esto \'ultimo, ahora se puede solo cambiar una peque\~na fracci\'on del c\'odigo (la parte donde se encuentra el modelo de campo magn\'etico) sin necesidad de alterar el core de Pakal . 
 
 
 \section{Sobre el Sol quieto y la emisi\'on submilim\'etrica solar}
@@ -229,30 +220,40 @@ Una caracter\'istica relevante del Sol quieto para esta tesis es el de la intens
 
 Si bien se conocen los rangos de la magnitudes de los campos magn\'eticos del Sol quieto, existe una dificultad en medir las magnitudes concretas de estos debido a corrientes desconocidas y condiciones no libres de fuerza. Lo anterior ocasiona que se tengan que calcular extrapolaciones a lo largo de la crom\'osfera y la regi\'on de transici\'on para obtener valores aproximados. Sin embargo, estas mediciones extrapoladas contienen ruidos, lo que las hace imprecisas. Lo anterior justifica que el modelo presentado en esta tesis tome valores de campos magn\'eticos no concretos.
 
-Otra caracter\'istica importante del Sol quieto para esta tesis es la emisi\'on milim\'etrica del plasma. Se ha comprobado que la observaci\'on de la emisi\'on milim\'etrica del plasma en Sol Quieto es equivalente a observar la totalidad de las emisiones de la Crom\'osfera Solar cuando est\'a en el estado solar de Sol Quieto 2000ESASP.463..363L. Con la emisi\'on milim\'etrica se puede aproximar el grado de ionizaci\'on de toda la atm\'osfera solar; y con esta \'ultima se pueden inferir aproximaciones de la temperatura, la densidad y la presi\'on que hay en ella. Estas \'ultimas aproximaciones se realizan seg\'un diferentes modelos; los cuales se pueden conceptualizar como emp\'iricos, semi-emp\'iricos y observacionales. 
+Otra caracter\'istica importante del Sol quieto para esta tesis es la emisi\'on milim\'etrica del plasma. Se ha comprobado que la observaci\'on de la emisi\'on milim\'etrica del plasma en Sol Quieto es equivalente a observar la totalidad de las emisiones de la Crom\'osfera Solar cuando est\'a en el estado solar de Sol Quieto \cite{millimeter}. Con la emisi\'on milim\'etrica se puede aproximar el grado de ionizaci\'on de toda la atm\'osfera solar; y con esta \'ultima se pueden inferir aproximaciones de la temperatura, la densidad y la presi\'on que hay en ella. Estas \'ultimas aproximaciones se realizan seg\'un diferentes modelos; los cuales se pueden conceptualizar como emp\'iricos, semi-emp\'iricos y observacionales. 
 
-Independientemente del tipo de modelo, por definici\'on, todos tienen limitaciones en sus c\'alculos de temperatura, densidad y presi\'on. En el modelo propuesto, se busca robustecer el modelo PakalMPI de V\'ictor de la Luz mediante la anexi\'on de el efecto te\'orico de los campos magn\'eticos. Esta anexi\'on se puede justificar, por diferentes teor\'ias y observaciones. Por ejemplo, un estudio reciente por Meunier (2018) propone que las peque\~nas regiones de campo magn\'etico contribuyen significamente a la emisi\'on cromosf\'erica y por consiguiente a la emisi\'on milim\'etrica. Lo anterior, como se explic\'o previamente, afectar\'ia a los c\'alculos de la temperatura, la densidad y la presi\'on de la crom\'osfera; haci\'endolos te\'oricamente m\'as precisos.
+Independientemente del tipo de modelo, por definici\'on, todos tienen limitaciones en sus c\'alculos de temperatura, densidad y presi\'on. En el modelo propuesto, se busca robustecer el modelo Pakal de V\'ictor de la Luz mediante la anexi\'on de el efecto te\'orico de los campos magn\'eticos. Esta anexi\'on se puede justificar, por diferentes teor\'ias y observaciones. Por ejemplo, un estudio reciente por Meunier (2018) propone que las peque\~nas regiones de campo magn\'etico contribuyen significamente a la emisi\'on cromosf\'erica y por consiguiente a la emisi\'on milim\'etrica. Lo anterior, como se explic\'o previamente, afectar\'ia a los c\'alculos de la temperatura, la densidad y la presi\'on de la crom\'osfera; haci\'endolos te\'oricamente m\'as precisos.
 
 \chapter{Extensi\'on al modelo Pakal \-- A\~nadiendo presi\'on magn\'etica}
 
-La extensi\'on propuesta en esta tesis al modelo computacional PakalIMPI le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de PakalIMPI, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo de Magnetohidrost\'atica. Hablando en t\'erminos f\'isicos, se podr\'ia decir que el modelo original resolv\'ia la siguiente ecuaci\'on de estado:
+La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo de Magnetohidrost\'atica. Hablando en t\'erminos f\'isicos, se podr\'ia decir que el modelo original resolv\'ia la siguiente ecuaci\'on de estado:
 
-**** PONER FORMULITA de vic de hidrost\'atica***
+\begin{equation*} \label{ecuacion_hidrostatica}
+\frac{dp}{dz} = g\rho
+\end{equation*}
+donde
 
-A esta f\'ormula, se le a\~nade el efecto de la presi\'on magn\'etica, resultando en la siguiente ecuaci\'on ****CITAR CORREGIR**.
+\begin{equation*} \label{ecuacion_presion}
+p = p_g + \frac{1}{2}\rho v_t^2
+\end{equation*}
 
-****PONER FORMULITA MHD CORREGIR***
 
-Cabe aclarar que la f\'ormula que utiliza el c\'odigo de la extensi\'on a PakalIMPI considera la siguiente ecuaci\'on de presi\'on magn\'etica para realizar los c\'alculos:
+A esta f\'ormula, se le a\~nade el efecto de la presi\'on magn\'etica, resultando en la siguiente ecuaci\'on\cite{priest}.
+
+\begin{equation*} \label{mhs}
+p = p_g + \frac{1}{2}\rho v_t^2 + p_B
+\end{equation*}
+
+Cabe aclarar que la f\'ormula que utiliza el c\'odigo de la extensi\'on a Pakal considera la siguiente ecuaci\'on de presi\'on magn\'etica para realizar los c\'alculos:
 
 $PB = \frac{B^2}{8\Pi}$
 
-A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa PakalIMPI realizado en esta tesis. Se contextualizar\'a dicho c\'odigo con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
+A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa Pakal realizado en esta tesis. Se contextualizar\'a dicho c\'odigo con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
 
-Para hacer posible la adici\'on del efecto de la presi\'on magn\'etica sobre la ecuaci\'on de estado dentro del c\'odigo Pakal, se modificaron los siguientes archivos:\newline \newline \newline \newline
+Para hacer posible la adici\'on del efecto de la presi\'on magn\'etica sobre la ecuaci\'on de estado dentro del c\'odigo Pakal, se modificaron los siguientes archivos:\newline
 
 \underline{hmodel.h}
-En esta libreria se definen la estructura de la atmosfera, a la cual se le agregaron las componentes x, y, z del campo magnetico, asi como la variable xi para la modulacion del mismo
+En esta libreria se definen la estructura de la atmosfera, a la cual se le agregaron las componentes x, y, z del campo magnetico, asi como la variable $\xi$ para la modulacion del mismo
 \begin{lstlisting}[style=CStyle]
 typedef struct{
 	int id;
@@ -438,7 +439,7 @@ double f_hydro(double Y, double R, double Z, double T, double vt, double bx, dou
 void NLTE(Model *model, double error, int hydro, double pz1, double fz1,double dx, int chromospheric_network,int cell, int magnetic);
 \end{lstlisting}
 
-\underline{pakal.c}
+\underline{Pakal.c}
 Pakal, al ser la parte del c\'odigo que "interact\'ua" con el usuario, es la parte que procesa la informaci\'on de la terminal y la env\'ia al resto del c\'odigo, tomando como entrada de la terminal los valores amplitud, intensidad y alpha, que son respectivamente los valores que se introduciran al campo magn\'etico.
 Amplitud: La amplitud del campo
 Intensidad: La intensidad del campo
@@ -530,13 +531,13 @@ if (!(compute_ion_profile)) {
 }
 \end{lstlisting}
   
-\chapter{Pruebas a la extensi\'on de PakalIMPI y sus Resultados}
+\chapter{Pruebas a la extensi\'on de Pakal y sus Resultados}
 
-Para probar la extensi\'on realizada al modelo computacional PakalIMIPI en esta tesis en esta tesis, se llevaron a cabo la simulaci\'ones del comportamiento de los campos magn\'eticos seg\'un dos modelos distintos. Uno en forma de arcos magn\'eticos \cite{loops} y otro en forma de un flujo emergente \cite{flujoemergente}. A continuaci\'on se precisar\'an las caracter\'isticas f\'isicas que se presuponen en cada modelo; as\'i como los resultados obtenidos para cada caso tras la simulaci\'on computacional.
+Para probar la extensi\'on realizada al modelo computacional Pakal en esta tesis en esta tesis, se llevaron a cabo la simulaci\'ones del comportamiento de los campos magn\'eticos seg\'un dos modelos distintos. Uno en forma de arcos magn\'eticos \cite{ashwanden} y otro en forma de un flujo emergente \cite{flujoemergente}. A continuaci\'on se precisar\'an las caracter\'isticas f\'isicas que se presuponen en cada modelo; as\'i como los resultados obtenidos para cada caso tras la simulaci\'on computacional.
 
 \section{Caracter\'isticas F\'isicas de los modelos de prueba \- Arcos Magn\'eticos y Flujo Emergente}
 
-Cabe se\~nalar que se eligieron estos dos modelos de campos magn\'eticos por diversas razones. Primeramente, se utilizaron los supuestos de los Arcos Magn\'eticos debido a que en algunas observaciones del experimento VAULT \cite{VAULT}, se observaron peque\~nas y relativamente fr\'ias estructuras cromosf\'ericas (LRI CORREGIR(aprox) 0.2); las cuales, hasta el momento, han sido las m\'as peque\~nas y con menor temperatura encontradas (v\'ease Anexo es del paper de VAULT2 CORREGIR). El origen de estas estructuras a\'un son un misterio, pero se ha teorizado que podr\'ian ser loops fr\'ios\cite{VAULT2}. El modelo de arcos magn\'eticos intenta representar estos loops fr\'ios. Por su parte, se realiza la simulaci\'on computacional bajo el modelo de campos magn\'eticos seg\'un la teor\'ia de Flujos Emergentes (Judge, 2008 CORREGIR) porque algunas observaciones (citar SUMER CORREGIR) parecen proveer de evidencia de que los campos magn\'eticos se pueden comportar seg\'un lo descrito por la teor\'ia concerniente. 
+Cabe se\~nalar que se eligieron estos dos modelos de campos magn\'eticos por diversas razones. Primeramente, se utilizaron los supuestos de los Arcos Magn\'eticos debido a que en algunas observaciones del experimento VAULT \cite{VAULT1}, se observaron peque\~nas y relativamente fr\'ias estructuras cromosf\'ericas (LRI CORREGIR(aprox) 0.2); las cuales, hasta el momento, han sido las m\'as peque\~nas y con menor temperatura encontradas (v\'ease Anexo es del paper de VAULT2 CORREGIR). El origen de estas estructuras a\'un son un misterio, pero se ha teorizado que podr\'ian ser loops fr\'ios\cite{VAULT2}. El modelo de arcos magn\'eticos intenta representar estos loops fr\'ios. Por su parte, se realiza la simulaci\'on computacional bajo el modelo de campos magn\'eticos seg\'un la teor\'ia de Flujos Emergentes (Judge, 2008 CORREGIR) porque algunas observaciones (citar SUMER CORREGIR) parecen proveer de evidencia de que los campos magn\'eticos se pueden comportar seg\'un lo descrito por la teor\'ia concerniente. 
 
 \subsection{Arcos Magn\'eticos}
 
@@ -555,7 +556,7 @@ Los siguientes valores son valores que se calculan por el mismo programa Pakal y
 
 \textbf{\(R\odot\)}  representa al radio solar y se toma un redondeo a $6.96x10^8m$.
 
-\textbf{h.} Representa la distancia desde el punto cuyo campo magn\'etico se busca calcular hasta el centro solar, menos el radio solar (Ver Figura \ref{arco_geometria}). Este valor se toma seg\'un lo arrojado por el c\'odigo PakalMPI sin la extensi\'on propuesta en esta tesis.
+\textbf{h.} Representa la distancia desde el punto cuyo campo magn\'etico se busca calcular hasta el centro solar, menos el radio solar (Ver Figura \ref{arco_geometria}). Este valor se toma seg\'un lo arrojado por el c\'odigo Pakal sin la extensi\'on propuesta en esta tesis.
 
 \textbf{Theta ($\theta$). }Es el \'angulo que se forma entre la base del nacimiento del arco y el punto que se desea calcular. Las pruebas para el \'angulo Theta utilizado fue seleccionado arbitrariamente en 92\degree para poder reflejar el mayor cambio determinable en el campo magn\'etico (seg\'un el modelo de Arcos Magn\'eticos) dada la resoluci\'on computacional utilizada (8 bytes de un double del lenguaje C). Te\'oricamente el mayor cambio en un campo magn\'etico ocurre en el \'angulo de 90\degree, pero la intensidad del campo magn\'etico resulta indeterminado con este valor de Theta seg\'un la ecuaci\'on de la intensidad del campo (CORREGIR refi\'erase a Anexo 3); adem\'as debido al redondeo de valores y a las grandes magnitudes utilizadas, los valores arrojados entre 89 y 91 generaron tambi\'en valores indeterminados. Sin embargo el software est\'a preparado para recibir cualquier valor.\newline
 La relaci\'on entre este \'angulo y el \'angulo $\alpha$ que es el que utiliza Pakal fue determinado por la ley de senos con las siguientes ecuaciones:
@@ -605,7 +606,7 @@ El modelo de arcos magn\'eticos es uno de los modelos m\'as simples y m\'as irre
 
 Los primeros resultados que se presentan, son aquellos concernientes a las pruebas de la codificaci\'on del modelo de arcos magn\'eticos para obtener lo perfiles de los propios arcos magn\'eticos. Particularmente, se realizaron pruebas en los campos magn\'eticos iniciales de 0, 25, 183 y 570G. Con estos valores se obtuvo un perfil del campo magn\'etico a lo largo de la altura; cuyos resultados se pueden apreciar en la Figura \ref{am_Campo_Magnetico}. Como se puede observar, los valores de los campos magn\'eticos arriba de los 1,000 km terminan siendo relativamente peque\~nos, independientemente del valor de entrada. Lo anterior va acorde a la teor\'ia del campo magn\'etico de la crom\'osfera.
 
-Una vez obtenidos los perfiles de los arcos magn\'eticos, ya se puede ajustar la presi\'on de la crom\'osfera a diferentes alturas. Los resultados obtenidos a trav\'es de la extensi\'on al c\'odigo PakalMPI se representan en la Figura \ref{am_Presion}. En ella se puede ver que conforme m\'as grande es el campo magn\'etico, la presi\'on decrementa menos, manteni\'endose a un valor m\'as alto. 
+Una vez obtenidos los perfiles de los arcos magn\'eticos, ya se puede ajustar la presi\'on de la crom\'osfera a diferentes alturas. Los resultados obtenidos a trav\'es de la extensi\'on al c\'odigo Pakal se representan en la Figura \ref{am_Presion}. En ella se puede ver que conforme m\'as grande es el campo magn\'etico, la presi\'on decrementa menos, manteni\'endose a un valor m\'as alto. 
 
 Despu\'es de obtener los resultado de la presi\'on de la crom\'osfera, se pueden calcular los valores de la densidad del hidr\'ogeno presente en la crom\'osfera. Estos resultados se pueden apreciar en el gr\'afico \ref{am_perfil_de_densidades}. Como se puede observar el comporamiento general es que a mayor campo magn\'etico menor es el gradiente de la densidad. En adici\'on a estos resultados, se muestran tambi\'en dos comparativos entre los resultados de las densidades para diferentes campos magn\'eticos. Estos \'ultimos resultantes se grafican en la Figura \ref{am_diferencias_absolutas} y en la Figura \ref{am_diferencias_relativas}.
 
@@ -726,12 +727,12 @@ J. M. Fontenla, E. H. Avrett y R. Loeser
 \textit{Energy Balance in the Solar Transition Region. I. Hydrostatic Thermal Models with Ambipolar Difussion} 
 The Astrophysical Journal, 1990.
 
-\bibitem{PAKAL}
+\bibitem{Pakal}
 V. de la Luz
 \textit{Modelaci\'on Tridimensional de la Atm\'osfera Solar para el Estudio de su Emisi\'on en Radio} 
 2011.
 
-\bibitem{loops} 
+\bibitem{ashwanden} 
 Markus Aschwanden. 
 \textit{Physics of the Solar Corona} 
 Springer Science \& Business Media, 2006.
@@ -751,6 +752,11 @@ Hathaway, D.
 \textit{Chromospheric Features} 
 https://solarscience.msfc.nasa.gov/feature2.shtml, NASA, 2014.
 
+\bibitem{priest} 
+Eric Priest
+\textit{Magnetohydrodinamics of the Sun} 
+ Cambgidge University, 2014
+
 \bibitem{chromotemp} 
 Fleishman G and Melnikov V
 \textit{Gyrosynchrotron emission from anisotropic electron distributions} 
@@ -760,6 +766,21 @@ The Astrophysical Journal, 2003
 N. Meunier
 \textit{Solar chromospheric emission and magnetic structures from plages to intranetwork: Contribution of the very quiet Sun} 
 Astronomy and Astrophysics, 2018
+
+\bibitem{energybalance} 
+J. M. Fontanela
+\textit{Energy balance in the solar transition region I. hydrostatic thermal models with ambipolar diffusion} 
+The Astrophysical Journal, 1990
+
+\bibitem{1000G} 
+Haosheng Lin and Thomas Rimmele
+\textit{The granular magnetic fields of the quiet sun} 
+The Astrophysical Journal, 1999
+
+\bibitem{millimeter} 
+Maria A. Loukitcheva and Valery G. Nagnibeda
+\textit{Radio Emision of Solar Chromosphere at Millimeter Wavelengths} 
+European Space Agency, 2000
 
 \end{thebibliography}
 
